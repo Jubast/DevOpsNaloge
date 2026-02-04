@@ -1,3 +1,11 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+    branches: [ "**" ]
+
 jobs:
   hello:
     name: Hello jobs
@@ -9,7 +17,7 @@ jobs:
     name: BE Build & Test & Package
     runs-on: ubuntu-latest
     
-    services:  # <- Should be at same level as runs-on
+    services:
       postgres:
         image: postgres:16
         env:
